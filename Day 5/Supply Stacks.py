@@ -9,7 +9,6 @@ crates = {
 8:['S','N','Z','T'],
 9:['N','H','Q','R','J','D','S','M']
 }
-print(crates)
 def finalScore_1(input) -> str:
     global crates
     message = []
