@@ -25,10 +25,21 @@ def finalScore_1(input) -> str:
 
 
 def finalScore_2(input) -> str:
+    global crates
     message = []
-
-    return message
+    with open(input) as file:
+        for line in file:
+            splittedCommand = line.strip().split(" ")
+            if int(splittedCommand[1]) == 1:
+                crates[int(splittedCommand[5])].insert(0,crates[int(splittedCommand[3])].pop(0))
+                continue
+            for i in range(int(splittedCommand[1])):
+                crates[int(splittedCommand[5])].insert(i,crates[int(splittedCommand[3])].pop(0))
+    newcrates = crates.copy()    
+    for i in range(1,10):
+        message.append(newcrates[i].pop(0))
+    return ''.join(message)
                 
 
-print(finalScore_1("input.txt"))
+#print(finalScore_1("input.txt"))
 #print(finalScore_2("input.txt"))
