@@ -25,12 +25,10 @@ def finalScore_2(input) -> int:
                 frange = [x for x in range(int(firstRange[0]),int(firstRange[1])+1)]
                 
                 if (int(secondRange[0]) in frange) or (int(secondRange[1]) in frange):
-                    print("yes")
                     sum +=1
             else:
                 srange = [x for x in range(int(secondRange[0]),int(secondRange[1])+1)]
                 if (int(firstRange[0]) in srange) or (int(firstRange[1]) in srange):
-                    print("yes 2")
                     sum +=1
 
     return sum
